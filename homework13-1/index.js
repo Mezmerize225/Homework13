@@ -66,16 +66,26 @@ async function getdata() {
     }  
 }
 
-// const item1 = document.querySelector(".container");
+const item1 = document.querySelector(".container");
 const myItems = getdata();
-myItems.forEach(e => {
-    const item = pushdata(e.title);
-    ul.appendChild(item);
-    console.log(item);
-});
+// myItems.forEach(e => {
+//     const item = pushdata(e.title);
+//     item1.appendChild(item);
+//     console.log(item);
+// });
 
-function pushdata(value) {
+// function pushdata(value) {
+//     const element = document.createElement('li');
+//     element.textContent = value;
+//     return element;
+// }
+
+myItems.forEach(e => {
     const element = document.createElement('li');
-    element.textContent = value;
-    return element;
-}
+    element.textContent = e.title;
+    if(e.completed) {
+        element.classList.add('completed');
+    }
+    item1.appendChild(element);
+    console.log(element);
+});
