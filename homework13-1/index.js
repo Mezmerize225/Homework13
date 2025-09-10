@@ -53,9 +53,11 @@ async function getdata() {
     try {
         const data = await fetch('https://jsonplaceholder.typicode.com/todos');
         const items = await data.json();
-        console.log(items);
-        // items.forEach(e => {
-        //     const item = pushdata(e.title);
+        // console.log(items);
+        pushdata(items);
+        // items.pushdata(items.title);
+        // item.forEach(e => {
+        //     // const item = pushdata(e.title);
         //     ul.appendChild(item);
         //     console.log(item);
         // })
@@ -74,18 +76,27 @@ const myItems = getdata();
 //     console.log(item);
 // });
 
-// function pushdata(value) {
-//     const element = document.createElement('li');
-//     element.textContent = value;
-//     return element;
-// }
+function pushdata(value) {
+    value.forEach ( e => {
+        console.log(value);
+        const element = document.createElement('li');
+        element.textContent = e.title;
+        if(e.completed) {
+            element.classList.add('completed');
+        }
+        item1.appendChild(element);
+        // return element;
 
-myItems.forEach(e => {
-    const element = document.createElement('li');
-    element.textContent = e.title;
-    if(e.completed) {
-        element.classList.add('completed');
-    }
-    item1.appendChild(element);
-    console.log(element);
-});
+    })
+    
+}
+
+// myItems.forEach(e => {
+//     const element = document.createElement('li');
+//     element.textContent = e.title;
+//     if(e.completed) {
+//         element.classList.add('completed');
+//     }
+//     item1.appendChild(element);
+//     console.log(element);
+// });
