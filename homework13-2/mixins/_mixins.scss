@@ -1,0 +1,17 @@
+@mixin font-todo() {
+    font-weight: 300;
+    font-style: Light;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+@mixin font-task() {
+    font-weight: 400px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #6B7280;
+}
+
+@mixin shadow() {
+    box-shadow: 0px 1px 2px black;
+}
